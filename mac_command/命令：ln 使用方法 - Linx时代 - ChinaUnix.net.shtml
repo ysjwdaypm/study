@@ -1,0 +1,254 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=gbk">
+<title>命令：ln  使用方法 - Linx时代 - ChinaUnix.net</title>
+<style type="text/css">
+h1{
+font-size:24px;
+margin: 0px;
+}
+td,select,input {font-size:12px}
+.l17 {line-height:170%;}
+.l15 {line-height:150%;}
+.f7 {font-size:7px;}
+.f24 {font-size:24px;}
+.f14{font-size:14px;line-height:130%;}
+.title12 {font-size:12px;}
+.title14 {font-size:14px;line-height:130%}
+.tail12{font-size:12px;}
+A:link {color: #0000ff;}
+A:visited {color: #800080;}
+A:active,A:hover {color : #ff0000}
+A.a01:link,A.a01:visited {text-decoration:none;color: #07015B;}
+A.a01:active,A.a01:hover {text-decoration:none;color : #ff0000}
+A.a02:link,A.a02:visited {text-decoration:none;color: #0000ff;}
+A.a02:active,A.a02:hover {text-decoration:none;color : #ff0000}
+</style>
+<style>
+A.akey:link {text-decoration:none;color: #0000ff;}
+A.akey:visited {text-decoration:none;color: #800080;}
+A.akey:active,A.akey:hover {text-decoration:underline;color : #ff0000}
+</style>
+
+
+<script src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/ca-pub-0052768304011480.js"></script><script language="JavaScript">
+function setBarPosition(){
+	document.getElementById('toolBar').style.top=0
+	document.getElementById('toolBar').style.left=621
+	document.getElementById('toolBar').style.display='block'
+}
+
+function setTailPosition(){
+//document.getElementById('innerad').style.display='block'
+
+var theHeight=(document.getElementById('toolBar').offsetHeight>document.getElementById('theEnd').offsetTop) ? document.getElementById('toolBar').offsetHeight : document.getElementById('theEnd').offsetTop
+	document.getElementById('sinaTail').style.top=theHeight
+	document.getElementById('sinaTail').style.left=document.getElementById('theEnd').offsetLeft
+	document.getElementById('sinaTail').style.display='block'
+}
+</script>
+</head>
+<body topmargin="5" leftmargin="0" onload="setTailPosition()" bgcolor="#ffffff" marginheight="5" marginwidth="0">
+<center>
+
+<!--导航start-->
+<style>.h3 {font-size:7px;color:#FFBD00}</style>
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr><td>
+<script src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/title.js"></script><style type="text/css">A.title1:link {font-size:17.9px;font-family:arial;font-weight:bold;text-decoration:none;color:#ffffff;}A.title1:visited {font-size:17.9px;font-family:arial;font-weight:bold;text-decoration:none;color:#ffffff;}A.title1:active {font-size:17.9px;font-family:arial;font-weight:bold;text-decoration:none;color:#ffffff;}A.title1:hover {font-size:17.9px;font-family:arial;font-weight:bold;text-decoration:none;color:#ffffff;}A.title2:link {text-decoration:none;color:#000000;font-size:12px}A.title2:visited {text-decoration:none;color:#000000;font-size:12px}A.title2:active {text-decoration:none;color:#ff0000;font-size:12px}A.title2:hover {text-decoration:none;color:#ff0000;font-size:12px}</style><table align="center" border="0" cellpadding="0" cellspacing="0" width="750"><tbody><tr><td colspan="2" height="1" bgcolor="#000000"><img src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/c.gif" height="1" width="1"></td></tr><tr><td colspan="2" height="2"></td></tr><tr><td height="18" align="center" bgcolor="#94AAD6" width="150"><a href="http://www.chinaunix.net/" class="title1">ChinaUnix.net</a></td><td align="right" width="600">	<table border="0" cellpadding="0" cellspacing="0" width="600"><tbody><tr align="center"><td align="right"><a href="http://www.chinaunix.net/" class="title2">首页</a> | <a href="http://bbs.chinaunix.net/forum/" class="title2">论坛</a> | <a href="http://www.chinaunix.net/jh" class="title2">精华</a> | <a href="http://blog.chinaunix.net/" class="title2" target="_blank"><font color="#ff0000">博客</font></a> | <a href="http://fanqiang.chinaunix.net/" class="title2">资料</a> | <a href="http://man.chinaunix.net/" class="title2" target="_blank"><font color="#ff0000">手册</font></a> | <a href="http://www.chinaunix.net/job" class="title2">人才</a> | <a href="http://www.chinaunix.net/search.html" class="title2">搜索</a></td></tr>	</tbody></table></td></tr><tr><td colspan="2" height="2"></td></tr><tr><td colspan="2" height="1" bgcolor="#000000"><img src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/images.html" height="1" width="1"></td></tr></tbody></table>
+</td></tr>
+</tbody></table>
+
+<!--导航end-->
+<!--头部结束-->
+
+<!--通栏广告开始-->
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr><td height="2"></td></tr>
+<tr><td>
+<script src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/topad.js"></script><a href="http://linux.chinaunix.net/"><img src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/zwad.gif" height="60" border="0" width="750"></a>
+</td></tr>
+</tbody></table>
+<!--通栏广告结束-->
+
+<table height="30" border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr><td valign="bottom" width="440"><font color="#0000ff"><a href="http://www.chinaunix.net/" class="a02">ChinaUnix首页</a> &gt; <a href="http://linux.chinaunix.net/" class="a02">Linux时代</a> &gt; <font class="a02"></font> &gt; 正文</font></td><td align="right" valign="bottom" width="150"></td></tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr><td height="8"></td></tr>
+<tr><td height="1" bgcolor="#747474"><img src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/c_002.gif" height="1" width="1"></td></tr>
+</tbody></table>
+
+<div id="outer" style="position:relative;width:750px;">
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr><td rowspan="2" align="center" bgcolor="#EDF0F5" valign="top" width="620">
+<br>
+	<div id="article">
+	<table border="0" cellpadding="0" cellspacing="0" width="560">
+	<tbody><tr><th class="f24"><font color="#05006C"><h1>命令：ln  使用方法</h1></font></th></tr>
+	<tr><td height=""><hr bgcolor="#d9d9d9" size="1"></td></tr>
+	<tr><td height="20" align="center">作者：不详 2004-10-06 00:05:25 来自：http://www.chinaunix.net</td></tr>
+	<tr><td height="15"></td></tr>
+	<tr><td class="l17"><font id="zoom" class="f14">
+
+<!-- 正文begin -->
+
+<p>　　指令名称 : ln</p>
+
+<p>　　使用权限 : 所有使用者</p>
+
+<p>　　使用方式 : ln [options] source dist，其中 option 的格式为 :</p>
+
+<p>　　[-bdfinsvF] [-S backup-suffix] [-V {numbered,existing,simple}]</p>
+
+<p>　　[--help] [--version] [--] </p>
+
+<p>　　说明 : Linux/Unix 档案系统中，有所谓的连结(link)，我们可以将其视为档案的别名，而连结又可分为两种 : 
+硬连结(hard link)与软连结(symbolic 
+link)，硬连结的意思是一个档案可以有多个名称，而软连结的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬连结是存在同一个档
+案系统中，而软连结却可以跨越不同的档案系统。</p>
+
+<p>　　ln source dist 是产生一个连结(dist)到 source，至于使用硬连结或软链结则由参数决定。</p>
+
+<p>　　不论是硬连结或软链结都不会将原本的档案复制一份，只会占用非常少量的磁碟空间。</p>
+
+<p>　　参数格式 :</p>
+
+<p>　　-f : 链结时先将与 dist 同档名的档案删除</p>
+
+<p>　　-d : 允许系统管理者硬链结自己的目录</p>
+
+<p>　　-i : 在删除与 dist 同档名的档案时先进行询问</p>
+
+<p>　　-n : 在进行软连结时，将 dist 视为一般的档案</p>
+
+<p>　　-s : 进行软链结(symbolic link)</p>
+
+<p>　　-v : 在连结之前显示其档名</p>
+
+<p>　　-b : 将在链结时会被覆写或删除的档案进行备份</p>
+
+<p>　　-S SUFFIX : 将备份的档案都加上 SUFFIX 的字尾</p>
+
+<p>　　-V METHOD : 指定备份的方式</p>
+
+<p>　　--help : 显示辅助说明</p>
+
+<p>　　--version : 显示版本 </p>
+
+<p>　　范例 :</p>
+
+<p>　　将档案 yy 产生一个 symbolic link : zz</p>
+
+<p>　　ln -s yy zz </p>
+
+<p>　　将档案 yy 产生一个 hard link : zz</p>
+
+<p>　　ln yy xx</p>
+
+<br><div align="right">(编辑:admin)</div>
+<!-- 正文end -->
+
+	<table align="center" border="0" width="90%">
+	 <tbody><tr></tr>
+	 </tbody></table>
+	
+
+	<br clear="all">
+		</font></td></tr>
+	</tbody></table>
+	</div>
+        <br>
+	<table border="0" cellpadding="0" cellspacing="0" width="560">
+	<tbody><tr><td>
+		<table border="0" cellpadding="0" cellspacing="0" width="565">
+		<tbody><tr><td align="right">【<a href="http://bbs.chinaunix.net/forum/viewforum.php?f=4">Linux论坛</a>】【评论】【<a href="javascript:window.close()">关闭</a>】</td></tr>
+		</tbody></table></td></tr>
+	</tbody></table>
+
+<br>
+</td><td rowspan="2" bgcolor="#747474" width="1"></td><td valign="top" width="129"></td></tr>
+</tbody></table>
+
+<!-- 右侧功能条 begin -->
+<div id="toolBar" style="position: absolute; top: 0px; left: 621px; display: block;">
+<table border="0" cellpadding="0" cellspacing="0" width="129">
+<tbody><tr><td align="right">
+ 
+	<table border="0" cellpadding="0" cellspacing="0" width="120">
+	<tbody><tr height="2"><td colspan="2"></td></tr>
+	<tr><td colspan="2" height="23" align="center" bgcolor="#63AAF7" width="120">Linux文档搜索</td></tr>
+	<form name="_search" action="http://search.chinaunix.net/cgi-bin/linux.cgi" method="GET"></form>	
+	<tr><td colspan="2" height="30">
+	关键词  <input name="k" class="t2" size="11" type="text"><br>
+	</td></tr>
+	<tr><td height="30" width="85">
+	<select name="_ss" class="t3">
+	<option selected="selected" value="title">按标题
+	</option><option value="keyword">按全文
+	</option></select>
+	</td><td align="right" width="35"><input name="enter" value="搜索" type="submit"></td></tr>
+	
+	</tbody></table> 
+	
+
+<!---右侧自定义广告开始----------->
+<script src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/rightad.js"></script><p></p><center></center>
+<!---右侧自定义广告结束----------->
+<!----Google广告开始-------->
+<script type="text/javascript"><!--
+google_ad_client = "pub-0052768304011480";
+google_alternate_color = "FFFFFF";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_ad_channel ="2804241652";
+google_color_border = "63AAF7";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "008000";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript" src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="600" width="120"></iframe></ins></ins>
+<!----Google广告结束-------->
+
+</td></tr></tbody></table>
+</div>
+<!-- 右侧功能条 end -->
+<script language="JavaScript">
+	setBarPosition();
+</script>
+
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr><td align="center" bgcolor="#EDF0F5" width="620">
+<div id="links">
+<table border="0" cellpadding="0" cellspacing="0" width="562">
+<tbody><tr><td width="562">
+ <table border="0" cellpadding="0" cellspacing="0" width="562">
+ <tbody><tr><td bgcolor="#5550A2">
+  <table border="0" cellpadding="5" cellspacing="1" width="100%">
+  
+  <tbody><tr><td class="f14" bgcolor="#EDF0F5">相关文章</td></tr>
+  <tr><td class="f14" bgcolor="#EDF0F5">
+<br>
+</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>
+
+</div>
+<table><tbody><tr><td height="2"></td></tr></tbody></table>
+
+</td><td rowspan="2" bgcolor="#747474" width="1"></td><td valign="top" width="129"></td></tr>
+</tbody></table>
+
+<br>
+<!--结束：底部-->
+</div></center>
+
+<center><div id="theEnd" style="position:relative;width:750px"></div></center>
+<div id="sinaTail" style="position: absolute; top: 1289px; left: 342px; display: block;">
+<hr size="2" width="750">
+<script src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/tail2.js"></script><center><style type="text/css">.copyright		{ font-size: 12px; font-family: 'song',Verdana; color: #444444; letter-spacing: -1px;}a.copyright		{ color: #444444; text-decoration: none;}a.copyright:hover { color: #; text-decoration: underline;}</style> <!--<font color=blue>关于我们 | 联系我们 | 广告服务 | 帮助信息 | 友情链接</font>--><br><br><span class="copyright">Copyright &#169; 2001-2018 ChinaUnix.net &nbsp;&nbsp;All Rights Reserved<p>感谢所有关心和支持过ChinaUnix的朋友们</p></span></center><script type="text/javascript" src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/statpv.js"></script><script type="text/javascript" src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/pv_002.js"></script><script type="text/javascript" src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/pv.js"></script><script src="%E5%91%BD%E4%BB%A4%EF%BC%9Aln%20%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%20-%20Linx%E6%97%B6%E4%BB%A3%20-%20ChinaUnix.net_files/ga.js" type="text/javascript"></script>
+
+</div>
+
+
+</body></html>

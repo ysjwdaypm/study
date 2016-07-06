@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>add demo</title>
+  <style>
+  div {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+    border: 3px solid blue;
+    text-align: center;
+    line-height: 60px;
+  }
+  p {
+    clear: left;
+    font-weight: bold;
+    font-size: 16px;
+    color: blue;
+    margin: 0 10px;
+    padding: 2px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+ 
+<div id="n"></div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+ 
+<p>Added this... (notice no border)</p>
+<span>testibfo</span>
+<span id="del"><input type="text"><p>click me</p></span>
+ 
+<script>
+$( "div#n" ).css( "border", "2px solid red" ,"margin-left","200px")
+  .css( "background", "yellow" ).text("haha").css("text-align","center").css("line-height","60px").css("color","blue");
+  // $( "div" ).animate({
+  //   width : "100px",
+  //   height : "100px",
+  //   margin:"1px",
+  //   background : "blue"
+  // });
+
+  // $("div").on("mouseover",function(evt){
+  //     $(this).stop();
+  //     $(this).animate({
+  //       width : "200px",
+  //       height : "200px",
+  //       left : "+=50px"
+  //     },100);
+  // });
+//http://www.365mini.com/page/jquery-trigger.htm
+$(document).ready(function(){
+
+  $("div").mouseover(function(){
+    // $(this).stop();
+    $(this).animate({
+        marginLeft:"+=100px",
+        // marginTop : "200px",
+        width : "200px",
+        height : "100px",
+        fontSize : "40px",
+        lineHeight: "100px"
+      },100);
+  });
+
+  $("div").mouseout(function(){
+    // $(this).stop();
+    $(this).animate({
+        marginLeft:"-=100px",
+        // marginTop : "200px",
+        width : "200px",
+        fontSize : "40px"
+
+      },100);
+  });
+
+  $(":text").blur("text test",function(event){
+    alert(event.data);
+    $(this).css("color","red");
+  });  
+
+  $(":text").select("text test",function(event){
+    alert(event.data);
+    $(this).css("color","blue");
+  });  
+
+  $("#del").delegate("p","click",function(){
+    alert("del");
+  })
+
+})
+
+  
+  // $("div").on("mouseout",function(evt){
+  //     $(this).stop();
+  //     $(this).animate({
+  //       width : "100px",
+  //       height : "100px",
+  //       left : "-=50px"
+  //     },100);
+  // });
+
+
+</script>
+ 
+</body>
+</html>

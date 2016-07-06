@@ -1,0 +1,108 @@
+Lua - C call Lua & Lua call C (2014-08-06 18:11:49)转载▼
+标签： 365 lua c interaction	分类： Lua
+Calling Lua Functions:
+A great strength of Lua is that a configuration file can define functions to be called by the application
+The API protocol to call a function is simple: 
+1.      1. You push the function to be called (push方法到栈上)
+2.      2. You push the arguments to the call (push方法参数到栈上)
+3.      3. Use lua_pcall to do the actual call (用lua_pcall调用方法)
+4.      4. Get the results from the stack (通过栈得到方法调用的返回结果)
+When a function returns multiple results, the first result is pushed first: (可返回多个结果)
+
+Lua调用C方法代码示例：  -- 这里是通过global环境来获取Lua方法并push方法参数进而调用lua方法
+ 
+//Calling Lua Functions
+       lua_State *L2 = luaL_newstate();
+       if( luaL_loadfile(L2,"Calling_Lua_Function.lua") || lua_pcall(L2,0,0,0) )
+      {
+           cout<<"luaL_dofile() exception:"<<lua_tostring(L2, -1)<<endl;
+      }
+           int x = 1;
+           int y = 2;
+           int isnum;
+           int z;
+            //push functions and arguments
+            lua_getglobal(L2,"plus");
+            lua_pushnumber(L2,x);
+            lua_pushnumber(L2,y);
+            //do the call (2 arguments, 1 result)
+            if( lua_pcall(L2,2,1,0) != LUA_OK )
+            {
+                   cout<<"error running function plus:"<<lua_tostring(L2,-1)<<endl;
+            }
+            //retrieve result
+           z = lua_tonumberx(L2,-1,&isnum);
+           if(!isnum)
+           {
+                cout<<"function plus must return a number"<<endl;
+           }
+           lua_pop(L2,1);     //pop returned value
+           cout<<x<<" + "<<y<<" = "<<z<<endl;
+           int j;
+           cin>>j;
+           lua_close(L2);
+
+Calling_Lua_Function.lua Code:
+function plus(x,y)
+            return x + y
+end
+
+ 
+Calling C from Lua:
+When we say that Lua can call C functions, this does not mean that Lua can call any C function.
+Steps to call C from Lua:
+1. Register the function (give its address to Lua in an appropriate way)
+Note:
+ 
+C Functions:
+Any function registered with Lua must have this same prototype, defined as lua_CFuntion in lua.h:
+            typedef int (*lua_CFuntion) (lua_State *L); (C与Lua交互的方法定义基本格式)
+1. Registered C function  
+-- lua_pushcfunction(lua_State*, funcName)  register C function, put it into the stack
+-- lua_setglobal(lua_State*, newFuncName)  change the C function reference name in Lua
+2. Uses the same kind of stack that C uses to call Lua. 
+3. The C function gets its arguments from the stack
+4. Pushes the results on the stack
+An important concept here is that the stack is not a global structure; each function has its own private local stack. When Lua calls a C function, the first argument will always be at index 1 of this local stack.
+C调用Lua方法代码示例： 
+// Lua_Call_C_Function_In_Lua.cpp
+#include "stdafx.h"
+extern "C"
+{
+                #include "lua.h"
+                #include "lauxlib.h"
+                #include "lualib.h"
+};
+static int c_plus(lua_State *L)
+{
+                //Open all standard libraries for current lua_State
+                luaL_openlibs(L);
+                int p1 = luaL_checknumber(L,1);
+                int p2 = luaL_checknumber(L,2);
+                //pop two parameters from stack
+                lua_pop(L,2);
+                int r;
+                r = p1 + p2;
+                cout<<p1<<" + "<<p2<<" = "<<r<<endl;
+                lua_pushnumber(L,r);
+                return 1;
+}
+int_tmain(int argc, _TCHAR* argv[])
+{
+                lua_State *L = luaL_newstate();
+                lua_pushcfunction(L,c_plus);
+                lua_setglobal(L,"myPlus");
+               
+                if( luaL_loadfile(L,"call_c_function.lua") || lua_pcall(L,0,0,0) )
+                {
+                                cout<<"luaL_dofile() exception:"<<lua_tostring(L, -1)<<endl;
+                }
+                lua_close(L);
+                int i;
+                cin>>i;
+                return 0;
+}
+call_c_function.lua:
+ --call c function
+r = myPlus(1,2)
+print("result = " .. r)

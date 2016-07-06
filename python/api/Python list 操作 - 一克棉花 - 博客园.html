@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Python list 操作 - 一克棉花 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-summerGarden.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/zhengyuxin/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/zhengyuxin/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/zhengyuxin/wlwmanifest.xml">
+<script src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/gpt.js" type="text/javascript" async=""></script><script src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'zhengyuxin', cb_enable_mathjax=false;</script>
+<script src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<script async="" src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/pubads_impl_78.js"></script></head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/zhengyuxin/"><img id="blogLogo" src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/zhengyuxin/">一克棉花</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+	<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+	<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/zhengyuxin/">首页</a></li>
+	<li><a href="http://news.cnblogs.com/">新闻</a></li>
+	<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1">联系</a></li>
+	<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+	<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/zhengyuxin/rss">订阅</a>
+	<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/zhengyuxin/rss"><img src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/xml.gif" alt="订阅"></a></li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 1&nbsp;
+文章- 54&nbsp;
+评论- 11&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/zhengyuxin/articles/1938300.html">Python list 操作</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p><span style="font-family: verdana, sans-serif;">
+</span></p><p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">创建列表<br>sample_list = ['a',1,('a','b')]</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">Python 列表操作<br>sample_list = ['a','b',0,1,3]</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">得到列表中的某一个值<br>value_start = sample_list[0]<br>end_value = sample_list[-1]</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">删除列表的第一个值<br>del sample_list[0]</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">在列表中插入一个值<br>sample_list[0:0] = ['sample value']</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">得到列表的长度<br>list_length = len(sample_list)</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">列表遍历<br>for element in sample_list:<br>&nbsp;&nbsp;&nbsp; print(element)<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>Python 列表高级操作/技巧</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">产生一个数值递增列表<br>num_inc_list = range(30)<br>#will return a list [0,1,2,...,29]</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">用某个固定值初始化列表<br>initial_value = 0<br>list_length = 5<br>sample_list = [ initial_value for i in range(10)]<br>sample_list = [initial_value]*list_length<br># sample_list ==[0,0,0,0,0]</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;"><br>附：python内置类型<br>1、list：列表（即动态数组，C++标准库的vector，但可含不同类型的元素于一个list中）<br>a = ["I","you","he","she"]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ＃元素可为任何类型。</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">下标：按下标读写，就当作数组处理<br>以0开始，有负下标的使用<br>0第一个元素，-1最后一个元素，<br>-len第一个元 素，len-1最后一个元素<br>取list的元素数量&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>len(list)&nbsp;&nbsp; #list的长度。实际该方法是调用了此对象的__len__(self)方法。&nbsp;</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">创建连续的list<br>L = range(1,5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #即 L=[1,2,3,4],不含最后一个元素<br>L = range(1, 10, 2) #即 L=[1, 3, 5, 7, 9]</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">list的方法<br>L.append(var)&nbsp;&nbsp; #追加元素<br>L.insert(index,var)<br>L.pop(var)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #返回最后一个元素，并从list中删除之<br>L.remove(var)&nbsp;&nbsp; #删除第一次出现的该元素<br>L.count(var)&nbsp;&nbsp;&nbsp; #该元素在列表中出现的个数<br>L.index(var)&nbsp;&nbsp;&nbsp; #该元素的位置,无则抛异常&nbsp;<br>L.extend(list)&nbsp; #追加list，即合并list到L上<br>L.sort()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #排序<br>L.reverse()&nbsp;&nbsp;&nbsp;&nbsp; #倒序<br>list 操作符:,+,*，关键字del<br>a[1:]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #片段操作符，用于子list的提取<br>[1,2]+[3,4] #为[1,2,3,4]。同extend()<br>[2]*4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #为[2,2,2,2]<br>del L[1]&nbsp;&nbsp;&nbsp; #删除指定下标的元素<br>del L[1:3]&nbsp; #删除指定下标范围的元素<br>list的复制<br>L1 = L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #L1为L的别名，用C来说就是指针地址相同，对L1操作即对L操作。函数参数就是这样传递的<br>L1 = L[:]&nbsp;&nbsp; #L1为L的克隆，即另一个拷贝。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>list comprehension<br>&nbsp;&nbsp; [ &lt;expr1&gt; for k in L if &lt;expr2&gt; ]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>2、dictionary： 字典（即C++标准库的map）<br>dict = {'ob1':'computer', 'ob2':'mouse', 'ob3':'printer'}<br>每一个元素是pair，包含key、value两部分。key是Integer或string类型，value 是任意类型。<br>键是唯一的，字典只认最后一个赋的键值。</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">dictionary的方法<br>D.get(key, 0)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #同dict[key]，多了个没有则返回缺省值，0。[]没有则抛异常<br>D.has_key(key)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #有该键返回TRUE，否则FALSE<br>D.keys()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #返回字典键的列表<br>D.values()<br>D.items()</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">D.update(dict2)&nbsp;&nbsp;&nbsp;&nbsp; #增加合并字典<br>D.popitem()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #得到一个pair，并从字典中删除它。已空则抛异常<br>D.clear()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #清空字典，同del dict<br>D.copy()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #拷贝字典<br>D.cmp(dict1,dict2)&nbsp; #比较字典，(优先级为元素个数、键大小、键值大小)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ #第一个大返回1，小返回-1，一样返回0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>dictionary的复制<br>dict1 = dict&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #别名<br>dict2=dict.copy()&nbsp;&nbsp; #克隆，即另一个拷贝。</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">3、tuple：元组（即常量数组）<br>tuple = ('a', 'b', 'c', 'd', 'e')<br>可以用list的 [],:操作符提取元素。就是不能直接修改元素。</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">4、string：&nbsp;&nbsp;&nbsp;&nbsp; 字符串（即不能修改的字符list）<br>str = "Hello My friend"<br>字符串是一个整 体。如果你想直接修改字符串的某一部分，是不可能的。但我们能够读出字符串的某一部分。<br>子字符串的提取<br>str[:6]<br>字符串包含 判断操作符：in，not in<br>"He" in str<br>"she" not in str</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">string模块，还提供了很多方法，如<br>S.find(substring, [start [,end]]) #可指范围查找子串，返回索引值，否则返回-1<br>S.rfind(substring,[start [,end]]) #反向查找<br>S.index(substring,[start [,end]]) #同find，只是找不到产生ValueError异常<br>S.rindex(substring,[start [,end]])#同上反向查找<br>S.count(substring,[start [,end]]) #返回找到子串的个数</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">S.lowercase()<br>S.capitalize()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #首字母大写<br>S.lower()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #转小写<br>S.upper()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #转大写<br>S.swapcase()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #大小写互换</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">S.split(str, ' ')&nbsp;&nbsp; #将string转list，以空格切分<br>S.join(list, ' ')&nbsp;&nbsp; #将list转string，以空格连接</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">处理字符串的内置函数<br>len(str)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #串长度<br>cmp("my friend", str)&nbsp;&nbsp; #字符串比较。第一个大，返回1<br>max('abcxyz')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #寻找字符串中最大的字符<br>min('abcxyz')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #寻找字符串中最小的字符</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">string的转换<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>oat(str) #变成浮点数，float("1e-1")&nbsp; 结果为0.1<br>int(str)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #变成整型，&nbsp; int("12")&nbsp; 结果为12<br>int(str,base)&nbsp;&nbsp; #变成base进制整型数，int("11",2) 结果为2<br>long(str)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #变成长整型，<br>long(str,base)&nbsp; #变成base进制长整型，</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">字符串的格式化（注意其转义字符，大多如C语言的，略）<br>str_format % (参数列表) #参数列表是以tuple的形式定义的，即不可运行中改变<br>&gt;&gt;&gt;print ""%s's height is %dcm" % ("My brother", 180)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #结果显示为 My brother's height is 180cm</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">。。。。。。。。。。。。。。。。。。</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">list 和 tuple 的相互转化</p>
+<p style="margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; padding: 0px;">tuple(ls)&nbsp;<br>list(ls)</p>
+<p></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/zhengyuxin/category/278808.html">Python</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1938300,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://msg.cnblogs.com/send/%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/zhengyuxin/" target="_blank"><img src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/sample_face.gif" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/zhengyuxin/">一克棉花</a><br>
+<a href="http://home.cnblogs.com/u/zhengyuxin/followees">关注 - 0</a><br>
+<a href="http://home.cnblogs.com/u/zhengyuxin/followers">粉丝 - 20</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(1938300,'Digg')">
+        <span class="diggnum" id="digg_count">4</span>
+    </div>
+	<div class="buryit" onclick="votePost(1938300,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/zhengyuxin/archive/2010/11/25/1888264.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/zhengyuxin/archive/2010/11/25/1888264.html" title="发布于2010-11-25 23:42">11月25 笔记</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2011-01-18 14:16</span> <a href="http://www.cnblogs.com/zhengyuxin/">一克棉花</a> 阅读(<span id="post_view_count">204203</span>) 评论(<span id="post_comment_count">5</span>) &nbsp;<a href="http://i.cnblogs.com/EditArticles.aspx?postid=1938300" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1938300);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=73203,cb_entryId=1938300,cb_blogApp=currentBlogApp,cb_blogUserGuid='5f354a9b-c890-df11-ba8f-001cf0cd104b',cb_entryCreatedDate='2011/1/18 14:16:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<!--done-->
+<br>
+<div class="feedback_area_title">发表评论</div>
+<div class="feedbackNoItems"></div>
+	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2372899" class="layer">#1楼</a><a name="2372899" id="comment_anchor_2372899"></a> <span class="comment_date">2012-05-09 11:46</span> | <a id="a_comment_author_2372899" href="http://home.cnblogs.com/u/407087/" target="_blank">张金宝</a> <a href="http://msg.cnblogs.com/send/%E5%BC%A0%E9%87%91%E5%AE%9D" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2372899" class="blog_comment_body">正需要呢,就发现了,学校了/</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2372899,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2372899,'Bury',this)">反对(0)</a></div><br>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2684577" class="layer">#2楼</a><a name="2684577" id="comment_anchor_2684577"></a> <span class="comment_date">2013-05-19 23:44</span> | <a id="a_comment_author_2684577" href="http://home.cnblogs.com/u/379845/" target="_blank">mimicom</a> <a href="http://msg.cnblogs.com/send/mimicom" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2684577" class="blog_comment_body">list 是有序的啊...</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2684577,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2684577,'Bury',this)">反对(0)</a></div><br>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2730100" class="layer">#3楼</a><a name="2730100" id="comment_anchor_2730100"></a> <span class="comment_date">2013-07-18 15:54</span> | <a id="a_comment_author_2730100" href="http://www.cnblogs.com/hongten/" target="_blank">Hongten</a> <a href="http://msg.cnblogs.com/send/Hongten" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2730100" class="blog_comment_body">你好，在看到你的blog的时候，发现这里有错误：<br>“L.pop(var)      #返回最后一个元素，并从list中删除之”<br>下面是我运行的demo：<br><div class="cnblogs_Highlighter sh-gutter"><div><div id="highlighter_486087" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(test_list)</code></div><div class="line number2 index1 alt1"><code class="python plain">[</code><code class="python string">'hello'</code><code class="python plain">, </code><code class="python value">0</code><code class="python plain">, </code><code class="python value">1</code><code class="python plain">, </code><code class="python value">0</code><code class="python plain">, </code><code class="python value">1</code><code class="python plain">, </code><code class="python value">2</code><code class="python plain">, </code><code class="python string">'world'</code><code class="python plain">, </code><code class="python value">4</code><code class="python plain">, </code><code class="python value">5</code><code class="python plain">, </code><code class="python string">'hongten'</code><code class="python plain">, </code><code class="python value">6</code><code class="python plain">]</code></div><div class="line number3 index2 alt2"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(test_list.pop(</code><code class="python value">0</code><code class="python plain">)) </code><code class="python comments">#返回最后一个元素，并从test_list中删除之</code></div><div class="line number4 index3 alt1"><code class="python plain">hello</code></div><div class="line number5 index4 alt2"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(test_list)</code></div><div class="line number6 index5 alt1"><code class="python plain">[</code><code class="python value">0</code><code class="python plain">, </code><code class="python value">1</code><code class="python plain">, </code><code class="python value">0</code><code class="python plain">, </code><code class="python value">1</code><code class="python plain">, </code><code class="python value">2</code><code class="python plain">, </code><code class="python string">'world'</code><code class="python plain">, </code><code class="python value">4</code><code class="python plain">, </code><code class="python value">5</code><code class="python plain">, </code><code class="python string">'hongten'</code><code class="python plain">, </code><code class="python value">6</code><code class="python plain">]</code></div><div class="line number7 index6 alt2"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(test_list.pop(</code><code class="python value">2</code><code class="python plain">)) </code><code class="python comments">#上面的注释有错误，pop(index)的操作是返回数组下标为index的元素，并从列表中删除之</code></div><div class="line number8 index7 alt1"><code class="python value">0</code></div><div class="line number9 index8 alt2"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(test_list)</code></div><div class="line number10 index9 alt1"><code class="python plain">[</code><code class="python value">0</code><code class="python plain">, </code><code class="python value">1</code><code class="python plain">, </code><code class="python value">1</code><code class="python plain">, </code><code class="python value">2</code><code class="python plain">, </code><code class="python string">'world'</code><code class="python plain">, </code><code class="python value">4</code><code class="python plain">, </code><code class="python value">5</code><code class="python plain">, </code><code class="python string">'hongten'</code><code class="python plain">, </code><code class="python value">6</code><code class="python plain">]</code></div></div></td></tr></tbody></table></div></div></div></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2730100,'Digg',this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2730100,'Bury',this)">反对(0)</a></div><span id="comment_2730100_avatar" style="display:none;">http://pic.cnblogs.com/face/284226/20150204161515.png</span><br>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2730104" class="layer">#4楼</a><a name="2730104" id="comment_anchor_2730104"></a> <span class="comment_date">2013-07-18 15:57</span> | <a id="a_comment_author_2730104" href="http://www.cnblogs.com/hongten/" target="_blank">Hongten</a> <a href="http://msg.cnblogs.com/send/Hongten" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2730104" class="blog_comment_body">还有就是用到：<br>L.sort()        #排序<br>时候，出现错误，请指教一下：<br><div class="cnblogs_Highlighter sh-gutter"><div><div id="highlighter_598518" class="syntaxhighlighter  python"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(test_list)</code></div><div class="line number2 index1 alt1"><code class="python plain">[</code><code class="python value">0</code><code class="python plain">, </code><code class="python value">1</code><code class="python plain">, </code><code class="python string">'hongten'</code><code class="python plain">, </code><code class="python value">2</code><code class="python plain">, </code><code class="python string">'world'</code><code class="python plain">, </code><code class="python value">4</code><code class="python plain">, </code><code class="python value">5</code><code class="python plain">, </code><code class="python string">'hongten'</code><code class="python plain">, </code><code class="python value">6</code><code class="python plain">, </code><code class="python string">'a'</code><code class="python plain">, </code><code class="python string">'b'</code><code class="python plain">, </code><code class="python string">'c'</code><code class="python plain">]</code></div><div class="line number3 index2 alt2"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(test_list.sort())</code></div><div class="line number4 index3 alt1"><code class="python plain">Traceback (most recent call last):</code></div><div class="line number5 index4 alt2"><code class="python spaces">&nbsp;&nbsp;</code><code class="python functions">File</code> <code class="python string">"&lt;pyshell#76&gt;"</code><code class="python plain">, line </code><code class="python value">1</code><code class="python plain">, </code><code class="python keyword">in</code> <code class="python plain">&lt;module&gt;</code></div><div class="line number6 index5 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python functions">print</code><code class="python plain">(test_list.sort())</code></div><div class="line number7 index6 alt2"><code class="python plain">TypeError: unorderable types: </code><code class="python functions">str</code><code class="python plain">() &lt; </code><code class="python functions">int</code><code class="python plain">()</code></div><div class="line number8 index7 alt1"><code class="python plain">&gt;&gt;&gt; test_list_extend.append(</code><code class="python string">"h"</code><code class="python plain">)</code></div><div class="line number9 index8 alt2"><code class="python plain">&gt;&gt;&gt; test_lsit_extend.append(</code><code class="python string">"e"</code><code class="python plain">)</code></div><div class="line number10 index9 alt1"><code class="python plain">Traceback (most recent call last):</code></div><div class="line number11 index10 alt2"><code class="python spaces">&nbsp;&nbsp;</code><code class="python functions">File</code> <code class="python string">"&lt;pyshell#78&gt;"</code><code class="python plain">, line </code><code class="python value">1</code><code class="python plain">, </code><code class="python keyword">in</code> <code class="python plain">&lt;module&gt;</code></div><div class="line number12 index11 alt1"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python plain">test_lsit_extend.append(</code><code class="python string">"e"</code><code class="python plain">)</code></div><div class="line number13 index12 alt2"><code class="python plain">NameError: name </code><code class="python string">'test_lsit_extend'</code> <code class="python keyword">is</code> <code class="python keyword">not</code> <code class="python plain">defined</code></div><div class="line number14 index13 alt1"><code class="python plain">&gt;&gt;&gt; list_a </code><code class="python keyword">=</code> <code class="python plain">[</code><code class="python string">"e"</code><code class="python plain">,</code><code class="python string">"z"</code><code class="python plain">,</code><code class="python string">"o"</code><code class="python plain">,</code><code class="python string">"r"</code><code class="python plain">]</code></div><div class="line number15 index14 alt2"><code class="python plain">&gt;&gt;&gt; list_a.extend(test_list_extend)</code></div><div class="line number16 index15 alt1"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(list_a)</code></div><div class="line number17 index16 alt2"><code class="python plain">[</code><code class="python string">'e'</code><code class="python plain">, </code><code class="python string">'z'</code><code class="python plain">, </code><code class="python string">'o'</code><code class="python plain">, </code><code class="python string">'r'</code><code class="python plain">, </code><code class="python string">'a'</code><code class="python plain">, </code><code class="python string">'b'</code><code class="python plain">, </code><code class="python string">'c'</code><code class="python plain">, </code><code class="python string">'h'</code><code class="python plain">]</code></div><div class="line number18 index17 alt1"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(list_a.sort()) </code><code class="python comments">#对list_a列表进行排序</code></div><div class="line number19 index18 alt2"><code class="python color1">None</code></div><div class="line number20 index19 alt1"><code class="python plain">&gt;&gt;&gt; </code><code class="python comments">#不知道为什么以上排序都有报错......</code></div><div class="line number21 index20 alt2"><code class="python plain">&gt;&gt;&gt; list_b </code><code class="python keyword">=</code> <code class="python plain">[</code><code class="python value">1</code><code class="python plain">,</code><code class="python value">3</code><code class="python plain">,</code><code class="python value">5</code><code class="python plain">,</code><code class="python value">2</code><code class="python plain">,</code><code class="python value">6</code><code class="python plain">,</code><code class="python value">4</code><code class="python plain">]</code></div><div class="line number22 index21 alt1"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(list_b.sort())</code></div><div class="line number23 index22 alt2"><code class="python color1">None</code></div><div class="line number24 index23 alt1"><code class="python plain">&gt;&gt;&gt; </code><code class="python functions">print</code><code class="python plain">(sort(list_b))</code></div><div class="line number25 index24 alt2"><code class="python plain">Traceback (most recent call last):</code></div><div class="line number26 index25 alt1"><code class="python spaces">&nbsp;&nbsp;</code><code class="python functions">File</code> <code class="python string">"&lt;pyshell#86&gt;"</code><code class="python plain">, line </code><code class="python value">1</code><code class="python plain">, </code><code class="python keyword">in</code> <code class="python plain">&lt;module&gt;</code></div><div class="line number27 index26 alt2"><code class="python spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="python functions">print</code><code class="python plain">(sort(list_b))</code></div><div class="line number28 index27 alt1"><code class="python plain">NameError: name </code><code class="python string">'sort'</code> <code class="python keyword">is</code> <code class="python keyword">not</code> <code class="python plain">defined</code></div></div></td></tr></tbody></table></div></div></div></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2730104,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2730104,'Bury',this)">反对(0)</a></div><span id="comment_2730104_avatar" style="display:none;">http://pic.cnblogs.com/face/284226/20150204161515.png</span><br>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#3003195" class="layer">#5楼</a><a name="3003195" id="comment_anchor_3003195"></a><span id="comment-maxId" style="display:none;">3003195</span><span id="comment-maxDate" style="display:none;">2014/8/8 10:01:42</span> <span class="comment_date">2014-08-08 10:01</span> | <a id="a_comment_author_3003195" href="http://www.cnblogs.com/zijin/" target="_blank">自加吧，少年</a> <a href="http://msg.cnblogs.com/send/%E8%87%AA%E5%8A%A0%E5%90%A7%EF%BC%8C%E5%B0%91%E5%B9%B4" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3003195" class="blog_comment_body"><a href="#2730104" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2730104);">@</a>Hongten<br>L.sort() 是对list L中的值进行排序，会直接修改L中的顺序，print L 可以查看结果。如果排序成功返回值为None。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3003195,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3003195,'Bury',this)">反对(0)</a></div><br>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="https://www.jpush.cn/" target="_blank">【推荐】极光推送30多万开发者的选择，SDK接入量超过30亿了，你还没注册？</a><br></div>
+<div id="opt_under_post"></div>
+<div id="ad_c1" class="c_ad_block"><a href="http://www.cnblogs.com/onepixel/p/5062456.html" target="_blank"><img src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/explain-it-simply.jpg" alt="explain it simply" title="explain it simply" height="250" width="300"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/536823/" target="_blank">如何招聘：永远不要自负的人</a><br> ·  <a href="http://news.cnblogs.com/n/536808/" target="_blank">同行看百度犯了什么错</a><br> ·  <a href="http://news.cnblogs.com/n/536811/" target="_blank">携程为什么卖假票？</a><br> ·  <a href="http://news.cnblogs.com/n/536822/" target="_blank">Google宣布今年I/O大会召开日期：5月18-20日</a><br> ·  <a href="http://news.cnblogs.com/n/536821/" target="_blank">全球PC去年萎缩8% 中国第四季度下滑4.7%</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/536387/" target="_blank">Docker简介</a><br> ·  <a href="http://kb.cnblogs.com/page/536115/" target="_blank">Docker简明教程</a><br> ·  <a href="http://kb.cnblogs.com/page/535581/" target="_blank">Git协作流程</a><br> ·  <a href="http://kb.cnblogs.com/page/535355/" target="_blank">企业计算的终结</a><br> ·  <a href="http://kb.cnblogs.com/page/535278/" target="_blank">软件开发的核心</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);    
+});
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/zhengyuxin/">一克棉花</a><br>园龄：<a href="http://home.cnblogs.com/u/zhengyuxin/" title="入园时间：2010-07-16">5年5个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/zhengyuxin/followers/">20</a><br>关注：<a href="http://home.cnblogs.com/u/zhengyuxin/followees/">0</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger('5f354a9b-c890-df11-ba8f-001cf0cd104b')">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="日历" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2015/12/01');return false;">&lt;</a></td><td align="center">2016年1月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2016/02/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td class="CalWeekendDay" align="center">2</td></tr><tr><td class="CalWeekendDay" align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td class="CalWeekendDay" align="center">9</td></tr><tr><td class="CalWeekendDay" align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalTodayDay" align="center">13</td><td align="center">14</td><td align="center">15</td><td class="CalWeekendDay" align="center">16</td></tr><tr><td class="CalWeekendDay" align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td class="CalWeekendDay" align="center">23</td></tr><tr><td class="CalWeekendDay" align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td class="CalWeekendDay" align="center">30</td></tr><tr><td class="CalWeekendDay" align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+<div id="widget_my_google" class="div_my_zzk"><input name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk" type="text">&nbsp;<input onclick="google_go()" value="谷歌搜索" class="btn_my_zzk" type="button"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/zhengyuxin/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/zhengyuxin/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/zhengyuxin/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/zhengyuxin/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/zhengyuxin/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" href="#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/zhengyuxin/tag/bat/">bat</a>(1)</li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/zhengyuxin/archive/2010/11.html">2010年11月 (1)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListArticleCategory">
+<h3 class="catListTitle">文章分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/zhengyuxin/category/279555.html">bat(2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/zhengyuxin/category/253891.html">C(1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/zhengyuxin/category/253887.html">C#(2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/zhengyuxin/category/253896.html">Div+Css(3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/zhengyuxin/category/254278.html">English Study(2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/zhengyuxin/category/268942.html">Excel(1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/zhengyuxin/category/253897.html">Jquery</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/zhengyuxin/category/253893.html">LightRoom</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/zhengyuxin/category/253888.html">LINQ(1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/zhengyuxin/category/280361.html">Linux(4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/zhengyuxin/category/279336.html">Office VBA(3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/zhengyuxin/category/253889.html">Oracle(1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/zhengyuxin/category/253894.html">Photoshop</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/zhengyuxin/category/278808.html">Python(24)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/zhengyuxin/category/253892.html">Qt(1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/zhengyuxin/category/264425.html">Tetra Pak(3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/zhengyuxin/category/253890.html">XML</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/zhengyuxin/category/253895.html">单反摄影(1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/zhengyuxin/category/253965.html">读书笔记(1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/zhengyuxin/category/281676.html">快捷键(2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/zhengyuxin/category/253898.html">生活随笔</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListImageCategory">
+<h3 class="catListTitle">相册</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/zhengyuxin/gallery/253967.html" rel="nofollow">50D+ Tarmon 17 50 2.8</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_1" href="http://www.cnblogs.com/zhengyuxin/gallery/253966.html" rel="nofollow">50D+Rollei 50 1.8 HFT</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div style="display: none;" id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"></div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/zhengyuxin/archive/2010/11/25/1888264.html">1. 11月25 笔记(172)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div style="display: none;" id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div style="display: none;" id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script><iframe style="visibility: hidden; display: none;" src="Python%20list%20%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E5%85%8B%E6%A3%89%E8%8A%B1%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/container.html"></iframe>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2016 一克棉花
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>

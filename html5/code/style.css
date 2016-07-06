@@ -1,0 +1,402 @@
+@charset="utf-8";
+
+#login{
+	color: red;
+}
+
+h1 {
+
+	margin-left:400px;
+	text-align: center;
+	color: red;
+	border: 1px solid red;
+	width: 50%;
+	background-color: rgba(123,131,123,0.5);
+
+}
+
+form{
+	border: 2px solid blue;
+}
+
+input{
+	
+	margin-right: 10px; 
+	margin-left: 20px;
+	color: red;
+}
+
+select{
+	width : 100px;
+	color: orange;
+	border: 2px solid red;
+
+}
+
+
+
+
+/*@-webkit-keyframes flipAni{
+	from {transform:rotateY(-90deg) scale(.9);}
+	to {transform:rotateY(0);}
+}
+
+@keyframes flipAni{
+	from {transform:rotateY(-90deg) scale(.9);}
+	to {transform:rotateY(0);}
+}
+
+.flip{
+	-webkit-backface-visibility : hidden;
+	-webkit-transform:translateX(0);
+	backface-visibility : hidden;
+	transform :translateX(0);
+}
+
+.flip.out{
+	-webkit-perspective: 1000;
+	-webkit-transform : rotateY(-90deg) scale(.9);
+	-webkit-animation-name : flipAni;
+	-webkit-animation-duration : 175ms;
+
+	perspective: 1000;
+	transform:rotateY(-90deg) scale(.9);
+	animation-name:flipAni;
+	animation-duration : 175ms;
+}
+
+@keyframes demo{
+
+}*/
+
+@keyframes myfirst
+{
+	from {background: red;}
+	to {background: orange;}
+}
+
+.flip{
+	animation: myfirst 5s;
+	-moz-animation: myfirst 5s; /* Firefox */
+	-webkit-animation: myfirst 5s; /* Safari and Chrome */
+	-o-animation: myfirst 5s; /* Opera */
+	background: orange;
+	-moz-animation-iteration-count: 10;/*定义循环资料，infinite为无限次*/
+}
+
+
+@keyframes pro{
+	from {
+		width: 10px;background: red;margin-left: 0px;
+		-moz-transform:rotate(30deg);
+	}
+	to {
+		width: 300px;background: blue;margin-left: 100px;
+		-moz-transform:rotate(80deg);
+	}
+}
+
+.progress{
+	margin-left: 100px;
+	width: 300px;
+	height: 20px;
+	-moz-animation : pro 10s;
+	background: blue;
+	-moz-animation-iteration-count: 2;
+	/*-moz-transition:background 0.5s ease-in-out,color 0.3s;*/
+	/*-moz-transform:rotate(20deg)*/
+}
+
+
+
+.big_{
+	font-size: 7em;
+	background: orange;
+}
+
+.red_{
+	background: red;
+	font-size: 1em;
+}
+
+.red_:hover{
+	background: green;
+}
+.red_:active{
+	background: blue;
+}
+
+.red_:focus{
+
+}
+
+.red_:link{
+
+}
+
+.red_:visited{
+
+}
+
+/*
+
+
+CSS 伪类 (Pseudo-classes)实例：
+超链接
+本例演示如何向文档中的超链接添加不同的颜色。
+超链接 2
+本例演示如何向超链接添加其他样式。
+超链接 - :focus 的使用
+本例演示如何对超链接应用 :focus 伪类（无法在 IE 中工作）。
+:first-child（首个子对象）
+本例演示 :first-child 伪类的用法。
+:lang（语言）
+本例演示 :lang 伪类的用法。
+
+a:link {color: #FF0000}		 未访问的链接
+a:visited {color: #00FF00}	 已访问的链接 
+a:hover {color: #FF00FF}	 鼠标移动到链接上 
+a:active {color: #0000FF}	 选定的链接 
+
+
+
+CSS2 - :first-child 伪类
+
+
+
+
+<html>
+<head>
+<style type="text/css">
+p:first-child {
+  color: red;
+  } 
+</style>
+</head>
+
+<body>
+<p>some text</p>
+<p>some text</p>
+</body>
+</html>
+
+
+
+例子 2 - 匹配所有 <p> 元素中的第一个 <i> 元素
+在下面的例子中，选择器匹配所有 <p> 元素中的第一个 <i> 元素：
+<html>
+<head>
+<style type="text/css">
+p > i:first-child {
+  font-weight:bold;
+  } 
+</style>
+</head>
+
+<body>
+<p>some <i>text</i>. some <i>text</i>.</p>
+<p>some <i>text</i>. some <i>text</i>.</p>
+</body>
+</html>
+
+
+
+<html>
+<head>
+<style type="text/css">
+p:first-child i {
+  color:blue;
+  } 
+</style>
+</head>
+
+<body>
+<p>some <i>text</i>. some <i>text</i>.</p>
+<p>some <i>text</i>. some <i>text</i>.</p>
+</body>
+</html>
+
+
+
+CSS2 - :lang 伪类
+:lang 伪类使你有能力为不同的语言定义特殊的规则。在下面的例子中，:lang 类为属性值为 no 的 q 元素定义引号的类型：
+<html>
+<head>
+
+<style type="text/css">
+q:lang(no)
+   {
+   quotes: "~" "~"
+   }
+</style>
+
+</head>
+
+<body>
+<p>文字<q lang="no">段落中的引用的文字</q>文字</p>
+</body></html>
+
+
+:lang 伪类允许您为不同的语言定义特殊的规则。在下面的例子中，在下面的例子中，:lang 类为带有值为 "no" 的 lang 属性的 q 元素定义引号的类型：
+
+一些文本~段落中的引用~一些文本。
+
+
+
+伪类
+W3C："W3C" 列指示出该属性在哪个 CSS 版本中定义（CSS1 还是 CSS2）。
+属性	描述	CSS
+:active	向被激活的元素添加样式。	1
+:focus	向拥有键盘输入焦点的元素添加样式。	2
+:hover	当鼠标悬浮在元素上方时，向元素添加样式。	1
+:link	向未被访问的链接添加样式。	1
+:visited	向已被访问的链接添加样式。	1
+:first-child	向元素的第一个子元素添加样式。	2
+:lang	向带有指定 lang 属性的元素添加样式。	2
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+<style type="text/css">
+q:lang(en)
+{
+quotes: '"' '"' "'" "'" "www" "wwww"
+}
+</style>
+</head>
+<body>
+
+<p><q>This is a <q>big  <q>hahahah</q> </q> quote.</q></p>
+<p><b>注释：</b>如果已规定 !DOCTYPE，那么 Internet Explorer 8 （以及更高版本）支持 quotes 属性。</p>
+</body>
+</html>
+
+*/
+
+
+
+
+
+#my{
+	background: red;
+	color: white;
+	width: 120px;
+	height: 200px;
+	line-height: 100px;
+	text-align: center;
+	text-align: center;
+	margin-top:5px;
+	padding: 20px 0px 0px 0px;
+	-moz-transition: width .4s ease-in 0s;
+}
+
+#my:hover{
+	width: 600px;
+}
+
+/*#my:active{
+	width: 400px;
+}*/
+
+/*#my:focus{
+	width: 600px;
+}*/
+
+ #timings-demo {
+     border: 1px solid #ccc;
+     padding-left: 50%;
+     height: 100%;
+     width: 100%;
+     /*vertical-align: center;*/
+   }
+     
+  .demo-box {
+     width: 100px;
+     height: 50px;
+     text-align: center;
+     line-height: 50px;
+     text-align: center;
+     color: #fff;
+     background: #00f0f0;
+     -moz-border-radius: 5px;
+     -webkit-border-radius: 5px;
+     border-radius: 5px;
+     -moz-box-shadow: inset 0 0 5px rgba(102, 153, 0,0.5);
+     -webkit-box-shadow: inset 0 0 5px rgba(102, 153, 0,0.5);
+     box-shadow: inset 0 0 5px rgba(102, 153, 0,0.5);
+     margin-bottom: 10px;
+  }
+
+  //ease效果：        
+  #ease {
+     -moz-transition: all 5s ease 0.3s;
+     -webkit-transition: all 5s ease 0.3s;
+     -o-transition: all 5s ease 0.3s;
+     transition: all 5s ease 0.3s;
+     background: #f36;      
+  }
+  //ease-in效果：
+  #ease-in {
+     -moz-transition: all 3s ease-in 0.5s;
+     -webkit-transition: all 3s ease-in 0.5s;
+     -o-transition: all 3s ease-in 0.5s;
+     transition: all 3s ease-in 0.5s;
+     background: #369;
+    /* width: 50px;
+     height: 30px;*/
+  }
+  //ease-out效果：
+  #ease-out {
+    -moz-transition: all 5s ease-out 0s;
+    -webkit-transition: all 5s ease-out 0s;
+    -o-transition: all 5s ease-out 0s;
+    transition: all 5s ease-out 0s;
+    background: #636;      
+  }
+  //ease-in-out效果：
+  #ease-in-out {
+    -moz-transition: all 1s ease-in-out 2s;
+    -webkit-transition: all 1s ease-in-out 2s;
+    -o-transition: all 1s ease-in-out 2s;
+    transition: all 1s ease-in-out 2s;
+    background: #3e6;
+  }
+  //linear效果：
+  #linear {
+    -moz-transition: all 6s linear 0s;
+    -webkit-transition: all 6s linear 0s;
+    -o-transition: all 6s linear 0s;
+    transition: all 6s linear 0s;
+    background: #999;
+  }
+  //cubic-bezier效果：
+  #cubic-bezier {
+    -moz-transition: all 4s cubic-bezier 1s;
+    -webkit-transition: all 4s cubic-bezier 1s;
+    -o-transition: all 4s cubic-bezier 1s;
+    transition: all 4s cubic-bezier 1s;
+    background: #6d6;
+  }
+  //hover状态下或单击click按钮后demo-box产生属性变化
+  #timings-demo.timings-demo-hover .demo-box,
+    #timings-demo:hover .demo-box {
+    -moz-transform: rotate(360deg) scale(1.2);
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -o-transform: rotate(360deg) scale(1.2);
+    transform: rotate(360deg) scale(1.2);
+    background: #369;
+    border: 1px solid rgba(255,230,255,08);
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    margin-left: 280px;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+
+/*input{
+	color : red;
+}*/

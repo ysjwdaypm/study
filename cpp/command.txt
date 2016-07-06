@@ -1,0 +1,3 @@
+g++  g++ -o out file.cpp
+
+clang -Wall -g -std=c++11  -lstdc++ -stdlib=libc++ -o out file.cpp

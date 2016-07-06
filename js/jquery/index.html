@@ -1,0 +1,209 @@
+<!DOCTYPE=HTML>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<title>test page</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="jqueryMD5.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				document.querySelector("#md").innerHTML = $.md5("welcome to my page");
+
+				// $.ajax({
+				// 	type : "GET",
+				// 	url : "http://192.168.1.33:8001/index?action=login&u=ysjw&p=123456",
+				// 	// url : "calendar.html",
+				// 	complete : function(event, xhr, settings){
+
+				// 		// for(var k in event){
+				// 		// 	console.log("---------------------------------------------k = " + k + "       "  + event[k]);
+				// 		// }
+				// 		console.log(settings);
+				// 		console.log("---------------------------------------------" + event.status, + "  " + event.statusText);
+						
+				// 	},
+				// 	success : function(event){
+				// 		console.log("-----------------------success----------------------" + event.status, + "  " + event.statusText);
+				// 	},
+
+				// 	error : function(event){
+				// 		console.log("-----------------------error----------------------" + event.status, + "  " + event.statusText);
+				// 	}
+				// });
+				
+				$( document ).ajaxSend(function() {
+  					$( ".log" ).text( "Triggered ajaxSend handler." );
+				});
+
+				$( document ).ajaxStop(function() {
+  					$( ".log" ).text( "Triggered ajaxStop handler." );
+				});
+
+				$( document ).ajaxError(function() {
+  					$( ".log" ).text( "Triggered ajaxError handler." );
+				});
+
+				$( document ).ajaxComplete(function() {
+  					$( ".log" ).text( "Triggered ajaxComplete handler." );
+				});
+
+
+				$(document).ajaxSuccess(function(event,xhr,settings){
+
+					$( ".result" ).text( xhr.responseText);
+				});
+
+				$( ".trigger" ).click(function() {
+  					$( ".result" ).load( "main.js" );
+				});
+
+				// $.ajax({
+				// 	url : "calendar.html",
+				// 	context : document.body
+				// }).done(function(){
+				// 	alert("done");
+				// });
+
+				var params = { width:1680, height:1050 };
+				var str = jQuery.param( params );
+				alert($.param([
+  { name: "first", value: "Rick" },
+  { name: "last", value: "Astley" },
+  { name: "job", value: "Rock Star" }
+]));
+				$( ".results" ).text( str );
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET","calendar.html",true);
+				xhr.onreadystatechange = function(){
+					// console,log(xhr.status);
+					var status = xhr.status;
+					console.log("-----------------------------------" + status);
+					// if(xhr.status == 200){
+					// 	console.log(xhr.response);
+					// }
+					// for(var k in xhr){
+					// 	console.log("key = " + k +  " , value " + xhr[k]);
+					// }
+				}
+
+				// xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;");
+				// xhr.send();
+// $.get("http://192.168.1.33:8001/index?action=login&u=ysjw&p=123456",function(){
+// 	alert("ok");
+// });
+			
+				// $.get("main.js",function(){
+				// 	alert("success");	
+				// });
+
+
+				$.getScript("main.js",function(data,status,xhr){
+
+					// alert(data);
+				});
+				/*
+
+			
+			//1.$.ajax带json数据的异步请求
+var aj = $.ajax( {  
+    url:'productManager_reverseUpdate',// 跳转到 action  
+    data:{  
+             selRollBack : selRollBack,  
+             selOperatorsCode : selOperatorsCode,  
+             PROVINCECODE : PROVINCECODE,  
+             pass2 : pass2  
+    },  
+    type:'post',  
+    cache:false,  
+    dataType:'json',  
+    success:function(data) {  
+        if(data.msg =="true" ){  
+            // view("修改成功！");  
+            alert("修改成功！");  
+            window.location.reload();  
+        }else{  
+            view(data.msg);  
+        }  
+     },  
+     error : function() {  
+          // view("异常！");  
+          alert("异常！");  
+     }  
+});
+
+
+//2.$.ajax序列化表格内容为字符串的异步请求
+function noTips(){  
+    var formParam = $("#form1").serialize();//序列化表格内容为字符串  
+    $.ajax({  
+        type:'post',      
+        url:'Notice_noTipsNotice',  
+        data:formParam,  
+        cache:false,  
+        dataType:'json',  
+        success:function(data){  
+        }  
+    });  
+}  
+
+
+//3.$.ajax拼接url的异步请求
+var yz=$.ajax({  
+     type:'post',  
+     url:'validatePwd2_checkPwd2?password2='+password2,  
+     data:{},  
+     cache:false,  
+     dataType:'json',  
+     success:function(data){  
+          if( data.msg =="false" ) //服务器返回false，就将validatePassword2的值改为pwd2Error，这是异步，需要考虑返回时间  
+          {  
+               textPassword2.html("<font color='red'>业务密码不正确！</font>");  
+               $("#validatePassword2").val("pwd2Error");  
+               checkPassword2 = false;  
+               return;  
+           }  
+      },  
+      error:function(){}  
+}); 
+
+
+//4.$.ajax拼接data的异步请求
+$.ajax({   
+    url:'<%=request.getContextPath()%>/kc/kc_checkMerNameUnique.action',   
+    type:'post',   
+    data:'merName='+values,   
+    async : false, //默认为true 异步   
+    error:function(){   
+       alert('error');   
+    },   
+    success:function(data){   
+       $("#"+divs).html(data);   
+    }
+});	
+
+
+
+
+				*/
+			});
+		</script>
+	</head>
+	<body onload="startJs()">
+		<form>
+			<input type="test" id="name" name="u" style="color : red;" placeholder="input">
+			<input type="button" id="btn" class="btn" style="color : blue" value="click me">
+		</form>
+		<span id="sp">
+			<p></p>
+		</span>
+		<p id = "md"></p>
+		<button id="b"></button>
+		<div class="trigger">Trigger</div>
+		<div class="result"></div>
+		<div class="log"></div>
+	</body>
+</html>
+
+
+

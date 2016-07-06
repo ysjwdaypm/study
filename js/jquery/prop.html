@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>removeProp demo</title>
+  <style>
+  img {
+    padding: 10px;
+  }
+  div {
+    color: red;
+    font-size: 24px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="jquery-qrcode-master/jquery.qrcode.min.js"></script>
+</head>
+<body>
+ 
+  <!-- <p></p> -->
+  <input id="check1" type="checkbox" checked="checked">
+<label for="check1">Check me</label>
+<p></p>
+ <div id="output"></div>
+
+ <ul>
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ul>
+
+<script>
+para = $( "p" );
+para
+  .prop( "luggageCode", 1234 )
+  .append( "The secret luggage code is: ", String( para.prop( "luggageCode" ) ), ". " )
+  // .removeProp( "luggageCode" )
+  .append( "Now the secret luggage code is: ", String( para.prop( "luggageCode" ) ), ". " );
+
+
+  $("input").prop( "check" ,"text")
+  $( "input" ).change(function() {
+  var $input = $( this );
+  $( "p" ).html(
+    ".attr( \"checked\" ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+    ".prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+    ".is( \":checked\" ): <b>" + $input.is( ":checked" ) ) + "</b>";
+}).change();
+// alert($("input").prop( "check"))
+var w = 80;
+$('#output').qrcode({"width":w,"height":w,"text":"http://www.haha.mx"});
+
+
+ var e2 = document.createElement("select");
+            e2.options[0] = new Option("加载项1", "");
+            e2.options[1] = new Option("加载项2", "");
+            $('#output').append(e2);
+
+ // $('#output').add("a");   
+ $( "li" ).add( "p" ).text( "background-color" );   
+</script>
+ 
+</body>
+</html>

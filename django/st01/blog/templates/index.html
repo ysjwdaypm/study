@@ -1,0 +1,147 @@
+<!DOCTYPE=html>
+
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<title>{{title}}</title>
+
+		<style type="text/css">
+			/*span{
+				color: red;
+			}
+			h2{
+				color: blue;
+			}
+
+			m{
+				color: green;
+			}*/
+
+			h{
+				color: orange;
+			}
+
+			.content {width:788px; margin:auto; height:auto; overflow:hidden; padding:30px; }
+			.content a {float:left; height:176px; border-right:1px solid #DDDDDD; position:relative; padding:10px;}
+			.focus {background:rgba(250,250,250,0.25); width:200; height:200; border:1px dashed #666; position:absolute; left:-1px; top:-1px; display:none;}
+			.focus:before {width:200; height:160; border-left:1px solid #fff; border-right:1px solid #fff; content:''; position:absolute; left:-1px; top:20px;}
+			/*.focus:after {width:160; height:200; border-top:1px solid #fff; border-bottom:1px solid #fff; content:''; position:absolute; top:-1px; left:20px;}*/
+			.content a:hover .focus {display:block;}
+			#noborder {border-right:0 none;}
+		</style>
+
+		<script type="text/javascript">
+
+			var colors = ["red","blue","green"];
+			var curColorIndex = 0;
+
+			var frameRate = parseInt(1000/1);
+
+			function update(){
+				var m = document.querySelector("#ch");
+				if(m){
+					m.style.color = colors[curColorIndex % 3];
+					curColorIndex++;
+
+					m.x = 100;
+				}
+
+				setTimeout(update,frameRate);
+			}
+
+			function onload(){
+				setTimeout(update,frameRate);
+			}
+
+		</script>
+	</head>
+	
+	<body onload="onload()">
+		{{d|date:"F"}}<br>
+		{{"this is my teacher"|phone2numeric}}<br>
+		{{ l|unordered_list }}<br>
+		{{"http://www.baidu.com"|urlize}}    &nbsp; over<br>
+		<span>{{"ysjwd adad adada"|center:300}}</span>    &nbsp; over<br>
+		<span>{{"ysjwd adad adada"|cut:"a"}}</span>    &nbsp; over<br>
+
+		<span>{{"test info in here"|escape}}</span><br>
+		<span>{{"test info in here"|join:"ysj"}}</span><br>
+		<span>{{list|slice:"-3:"}}</span><br>
+		<!-- {% lorem  3 p %}<br>----------------------<br>
+		{% lorem 2 w random %}<br>----------------------<br>
+		{% lorem %}<br>----------------------<br> -->
+		{% for date in list %}
+			<!-- {{date}} -->
+                {% ifchanged %}<h3>h:{{ date|date:"F" }}</h3>{% endifchanged %}
+                <!-- <a href="{{ date|date:"M/d"|lower }}/">{{ date|date:"j" }}</a> -->
+                <a href="{{ date }}/">{{ date}}</a>
+        {% endfor %}
+
+		{% verbatim %}
+		123{{list}}
+		{% endverbatim %}<br>
+		{% widthratio 200 300 100 as width %}
+  The width is: {{ width }}<br>
+		{% with foo=1 bar=2 %}
+			{{foo}} | {{bar}}
+        {% endwith %}
+        {{foo}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yes<br>
+		{% for o in list %}
+            <tr class="{% cycle 'row1' 'row2' %}">
+                
+            </tr>
+        {% endfor %}<br>
+		{% firstof 0 2 3 as myvar %}{{myvar}}<br>
+		{% ifequal 1 2 %}
+			you are right
+		{% else %}
+			you are wrong
+		{% endifequal %}
+		<br>It is {% now " Y-M-D H:i" %}<br>
+		<h><span>welcome</span> <span style="color : blue">{{name}}</span> <m id="ch">to my webpage</m></h>
+		
+		{% load TestTag %}
+		<ol type="I" start=23 title="title 123">
+			{% TestTag / "首 页" %}
+			{% TestTag /article/ "文 章" %}
+			{% TestTag /about/ "联 系" %}
+			{% TestTag /forum/ "论 坛" %}
+		</ol>
+
+
+		<form action="">
+ <div>
+  <a href="accesskey.html" accesskey="j">跳转(<u>J</u>)</a>
+ </div>
+ <div>
+  <label for="t1" accesskey="b">浏览器名(<u>B</u>)：</label>
+  <input type="text" id="t1" name="BROWSER">
+ </div>
+ <div>
+  <input type="radio" id="r1" name="YESNO" value="YES" checked>
+  <label for="r1" accesskey="y">YES(<u>Y</u>)</label>
+  <input type="radio" id="r2" name="YESNO" value="NO">
+  <label for="r2" accesskey="n">NO(<u>N</u>)</label>
+ </div>
+ <div>
+  <input type="checkbox" id="c1" name="Win">
+  <label for="c1" accesskey="w">Windows(<u>W</u>)</label>
+  <input type="checkbox" id="c2" name="Mac">
+  <label for="c2" accesskey="m">Macintosh(<u>M</u>)</label>
+ </div>
+</form>
+		<!-- <img src="aaa.jpg" /> -->
+{% load static %}
+<div class="content">
+  <a href="http://www.jiawin.com" target="_blank"><img src="{% static "images/aaa.jpg" %}" />
+  <p class="focus"></p></a>
+  <a href="http://www.jiawin.com" target="_blank"><img src="static/images/aaa.jpg" />
+  <p class="focus"></p></a>
+  <a href="http://www.jiawin.com" target="_blank"><img src="static/images/aaa.jpg" />
+  <p class="focus"></p></a>
+  <a href="http://www.jiawin.com" target="_blank"><img src="static/aaa.jpg" />
+  <p class="focus"></p></a>
+</div>
+
+	</body>
+</html>

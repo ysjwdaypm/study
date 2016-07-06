@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+	<head>
+		<meta charset="utf-8">
+		<title>测试网页</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script language="javascript">
+			function checkLogin()
+			{
+				var name = document.getElementById("name");
+				alert(this.document + "\n" + document);
+
+
+			}
+
+			function getCxt()
+			{
+				var c = document.getElementById("canvas");
+				var cxt = c.getContext("2d");
+				return cxt;
+			}
+
+			function f()
+			{
+				// var c = document.getElementById("canvas");
+				// var cxt = c.getContext("2d");
+
+				// cxt.fillStyle = "#00f0f0";
+				// cxt.fillRect(100,100,300,300);
+
+				// setTimeout(moveBall,10);
+				var str = "ysjwdaypm";
+				var e = document.querySelector("#tt");
+				e.innerHTML = str.link("http://www.baidu.com");
+				console.log(str.link("http://www.baidu.com"));
+				
+
+				
+				
+				
+				e.classList.add("red_");
+				e.classList.add("big_");
+
+
+			}
+
+
+			var x = 250;
+			var y = 250;
+
+			var moveX = 0;
+			var moveY = 10;
+			var speed = 5;
+			var border = 10;
+			var borderRigth = 490;
+
+
+			var lines = [];
+			var angle = 0;
+
+
+			function Point(x,y) {
+				this.x = x;
+				this.y = y;
+
+				this.dis = function(other){
+					var _x = this.x - other.x;
+					var _y = this.y - other.y;
+
+					return Math.sqrt(_x*_x + _y*_y);
+				}
+
+				this.dis1 = function(x,y){
+					var _x = this.x - x;
+					var _y = this.y - y;
+
+					return Math.sqrt(_x*_x + _y*_y);
+				},
+				this.toString = function(){
+					return "this.x = " + this.x + " this.y = " + this.y;
+				}
+			}
+
+
+			function Line(from,to,angle) {
+				// body...
+				this.from = from;
+				this.to = to;
+				this.angle = angle;
+				this.cos = 0;
+				this.sin = 0;
+
+				this.draw = function(cxt){
+					cxt.fillStyle = "#f0f";
+					cxt.moveTo(this.from.x,this.from.y);
+					cxt.lineTo(this.to.x,this.to.y);
+					cxt.stroke();
+					// console.log("adad");
+				},
+
+				this.ratation =  function(angle,originPoint){
+
+					this.angle = Math.PI * angle / 180;
+					this.cos = Math.cos(this.angle);
+					this.sin = Math.sin(this.angle);
+
+					this.from = this.update(this.cos,this.sin,this.from,originPoint);
+					this.to = this.update(this.cos,this.sin,this.to,originPoint);
+
+				},
+
+				this.hitBall = function(x,y,r,speedx,speedy){
+					
+					var a = this.from.dis1(x,y);
+					var b = this.to.dis1(x,y);
+					var c = this.from.dis(this.to);
+
+					var dis = pointToLine(a,b,c);
+
+					// hit
+					if(dis < r){
+						var cos = Math.cos(-this.angle);
+					    var sin = Math.sin(-this.angle); 
+						var _x = speedx * cos - speedy * sin;
+						var _y = speedx * sin + speedy * cos;	
+						_y *= -1;
+
+
+						var p = new Point(_x * this.cos - _y * this.sin, _x * this.sin + _y * this.cos);
+						
+						console.log(p.toString());
+						return p;
+
+					}
+
+					return null;
+				},
+
+				this.update = function(cos,sin,point,originPoint){
+
+					var x = point.x - originPoint.x;
+					var y = point.y - originPoint.y;
+
+					var _x = x * cos - y * sin;
+					var _y = x * sin + y * cos;
+
+					return new Point(_x + originPoint.x,_y + originPoint.y);
+
+				}
+
+			}
+
+			var originsPoint = new Point(250, 250);
+
+			function createGame() {
+				var bor = 60;
+				var p1 = new Point(bor, bor);
+				var p2 = new Point(500-bor, bor);
+				var p3 = new Point(500-bor, 500-bor);
+				var p4 = new Point(bor, 500-bor);
+
+				lines.push(new Line(p1, p2, angle));
+				lines.push(new Line(p2, p3, angle));
+				lines.push(new Line(p3, p4, angle));
+				lines.push(new Line(p4, p1, angle));
+
+				for (var i = lines.length - 1; i >= 0; i--) {
+					lines[i].ratation(30,this.originsPoint);
+				}
+				moveBall();
+				// console.log("start");
+			}
+
+			/**
+
+			a * a = y * y + x * x;
+			b * b = (c - x) * (c - x) + y * y;
+			var c1 = a * a + c * c - b* b;
+			var x = c1 / 2c;
+			y * y = a * a - x * x
+
+
+			**/
+
+
+
+			function pointToLine(a,b,c){
+				var c1 = a * a + c * c - b* b;
+				var x = c1 / (2 * c);
+				return Math.sqrt(a*a - x * x);
+			}
+
+
+			var count = 0;
+
+			function moveBall()
+			{
+				count++;
+				var cxt = getCxt();
+				cxt.clearRect(0,0,500,500);
+
+				this.angle += 5;
+				var line = null;
+				for (var i = lines.length - 1; i >= 0; i--) {
+					line = lines[i];
+					// if(count > 10){
+					// 	line.ratation(this.angle,this.originsPoint);
+					// }
+					line.draw(cxt);
+
+					var ps = line.hitBall(x, y, 15, moveX, moveY);
+					if(ps){
+						moveX = ps.x;
+						moveY = ps.y;
+						// break;
+					}
+				}
+
+				if(count > 10){
+					count = 0;
+				}
+
+				// if(x > borderRigth || x < border)
+				// 	moveX *= -1;
+				// if(y > borderRigth || y < border)
+				// 	moveY *= -1;
+
+				x += moveX ;
+				y += moveY ;
+				drawBall(cxt);
+				// alert();
+				// var info = "x = " + x + " , y = " + y;
+				// alert(info);
+				// document.getElementById("name").value = info;
+
+				setTimeout(moveBall,50);
+			}
+
+			// setTimeout(moveBall,1000);
+
+			function drawBall(cxt)
+			{
+				cxt.fillStyle = "#f0f";
+				cxt.beginPath();
+				cxt.arc(x,y,15,0,Math.PI * 2,true);
+				cxt.closePath();
+				cxt.fill();
+
+				
+			}
+
+		</script>
+
+
+	</head>
+	<body onload="createGame()">
+
+<!-- 
+	<form method="GET" action="http://192.168.1.33:8000/index/login/test">
+		<input type="text" name="name">name
+		<input type="submit">
+	</form>		
+
+	<p id="tt"></p>	
+	<div>
+		<a href="" class="flip"><img src="http://photocdn.sohu.com/20160125/.jpeg" alt="invalid image"></a>
+	</div>
+	<div class="progress"></div>
+	  <a id="timings-demo-btn">click</a>
+  <div id="timings-demo">
+    <div id="my">Ease<br>test</div>
+    <div id="ease-in" class="demo-box">Ease-in</div>
+    <div id="ease-out" class="demo-box">Ease-out</div>
+    <div id="ease-in-out" class="demo-box">Ease-in-out</div>
+    <div id="linear" class="demo-box">Linear</div>
+    <div id="cubic-bezier" class="demo-box">Cubic-bezier</div>
+  </div>
+
+  	<div>
+		<h1> welcome to my web page!</h1>
+		<hr>
+
+		<form id="login" action="javascript:checkLogin()" style="border:3px solid red">
+			name : <input type="text" id="name" name="name" autofocus placeholder="input name" required/>
+			password: <input type="password" name="password" required="true"/>
+			<select name="sel" style="width:100px">
+			  <option value="volvo">Volvo</option>
+			  <option value="saab" selected>Saab</option>
+			  <option value="opel" >Opel</option>
+			  <option value="audi">Audi</option>
+			</select>
+			
+		</form>
+		
+		<input type="submit" form="login">
+
+		<input type="radio" id="radio" name="fruit" value="1" form="login">
+		<label for="radio">maple</label>
+		<input type="radio" id="q" name="fruit" value="2" form="login">
+		<label for="q">orange</label>
+
+		<input type="radio"  name="fruit" value="3" form="login">apple
+		<canvas id="canvas" width="500" height="500" style="border:3px solid red"></canvas>
+	</div> -->
+
+	<canvas id="canvas" width="500" height="500" style="border:3px solid red"></canvas>
+
+	</body>
+<html>
+
